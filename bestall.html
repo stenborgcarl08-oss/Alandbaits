@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Beställ &amp; kontakt – Åland Baits UF</title>
   <meta name="description" content="Åland Baits UF tillverkar handgjorda fiskedrag på Åland.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -28,7 +31,114 @@
   </header>
 
   <main>
+
+    <section class="page-intro">
+      <h1>Beställ &amp; kontakt</h1>
+      <p>Vi har ingen webbshop. Hör av dig direkt till oss, så hjälper vi dig.</p>
+    </section>
+
+    <!-- Byt e-postadressen på BÅDA ställena nedan (href och texten) -->
+    <ul class="contact-grid">
+      <li>
+        <a class="contact-card" href="mailto:din-epost@example.com?subject=Fr%C3%A5ga%20till%20%C3%85land%20Baits">
+          <span class="contact-label">E-post</span>
+          <span class="contact-value placeholder-text">din-epost@example.com</span>
+          <span class="contact-action">Skicka ett mejl →</span>
+        </a>
+      </li>
+      <li>
+        <a class="contact-card" href="https://www.instagram.com/alandbaits/" target="_blank" rel="noopener">
+          <span class="contact-label">Instagram</span>
+          <span class="contact-value">@alandbaits</span>
+          <span class="contact-action">Skicka ett meddelande →</span>
+        </a>
+      </li>
+    </ul>
+
+    <section class="section" aria-labelledby="kop-rubrik">
+      <h2 id="kop-rubrik">Så går ett köp till</h2>
+      <div class="order-grid">
+        <div class="order-type">
+          <h3>Färdiga drag</h3>
+          <ol>
+            <li>Hitta draget under <a href="produkter.html">Produkter</a>.</li>
+            <li>Mejla eller skriv på Instagram och ange dragets namn.</li>
+            <li>Vi bekräftar pris, tillgänglighet och hur du får draget.</li>
+          </ol>
+        </div>
+        <div class="order-type">
+          <h3>Specialbeställning</h3>
+          <p>Vill du ha ett drag gjort efter dina önskemål? Fyll i det du vet, så hör vi av oss.</p>
+          <p class="placeholder-text">[Ungefärlig tillverkningstid, t.ex. 2–3 veckor.]</p>
+
+          <details class="custom-order">
+            <summary class="button">Specialbeställning</summary>
+
+            <!-- Byt e-postadressen i data-email -->
+            <form class="custom-form" data-email="din-epost@example.com">
+              <div class="field">
+                <label for="f-typ">Dragtyp</label>
+                <input id="f-typ" name="Dragtyp" list="dragtyper" placeholder="t.ex. Jerkbait" required>
+                <datalist id="dragtyper">
+                  <option value="Jerkbait">
+                  <option value="Glidebait">
+                  <option value="Wobbler">
+                  <option value="Crankbait">
+                </datalist>
+              </div>
+              <div class="field">
+                <label for="f-farg">Färg</label>
+                <input id="f-farg" name="Färg" placeholder="t.ex. abborrmönster, chartreuse">
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="f-vikt">Vikt</label>
+                  <div class="unit"><input id="f-vikt" name="Vikt" inputmode="decimal"><span>g</span></div>
+                </div>
+                <div class="field">
+                  <label for="f-langd">Längd</label>
+                  <div class="unit"><input id="f-langd" name="Längd" inputmode="decimal"><span>cm</span></div>
+                </div>
+              </div>
+              <fieldset class="field">
+                <legend>Gång</legend>
+                <label class="choice"><input type="radio" name="Gång" value="Flytande (floating)"> Flytande <span>floating</span></label>
+                <label class="choice"><input type="radio" name="Gång" value="Sjunkande (sinking)"> Sjunkande <span>sinking</span></label>
+                <label class="choice"><input type="radio" name="Gång" value="Glidande (gliding)"> Glidande <span>gliding</span></label>
+                <label class="choice"><input type="radio" name="Gång" value="Vet inte – föreslå gärna"> Vet inte – föreslå gärna</label>
+              </fieldset>
+              <div class="field">
+                <label for="f-ovrigt">Övrigt <span class="optional">(valfritt)</span></label>
+                <textarea id="f-ovrigt" name="Övrigt" rows="3" placeholder="Fiskart, vatten, antal …"></textarea>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="button">Skapa mejl →</button>
+                <button type="button" class="button button-secondary copy-order">Kopiera till Instagram</button>
+              </div>
+              <p class="form-status" role="status"></p>
+            </form>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="meddelande-rubrik">
+      <h2 id="meddelande-rubrik">Skriv gärna med i ditt meddelande</h2>
+      <ul class="checklist">
+        <li>Vilket drag du är intresserad av</li>
+        <li>Hur många du vill ha</li>
+        <li>Var du bor, så vi kan föreslå leverans eller upphämtning</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="leverans-rubrik">
+      <h2 id="leverans-rubrik">Leverans och betalning</h2>
+      <p class="lead placeholder-text">[Skriv hur kunden får draget och betalar, t.ex. upphämtning i Mariehamn, frakt inom Finland och Sverige, fraktkostnad och betalsätt.]</p>
+    </section>
+
   </main>
+
+  <script src="js/bestall.js"></script>
 
 </body>
 </html>

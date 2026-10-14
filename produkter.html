@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Produkter – Åland Baits UF</title>
   <meta name="description" content="Åland Baits UF tillverkar handgjorda fiskedrag på Åland.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -28,7 +31,114 @@
   </header>
 
   <main>
+
+    <section class="page-intro">
+      <h1>Produkter</h1>
+      <p>Klicka på ett drag för att se mer information och fråga om det.</p>
+    </section>
+
+    <!--
+      KATEGORIER
+      Byt texten i knapparna, t.ex. [Kategori 1] → Wobblers.
+      data-filter ska matcha data-category på produkterna nedan – den behöver inte ändras.
+    -->
+    <div class="filters" role="group" aria-label="Filtrera drag">
+      <button type="button" class="filter" data-filter="alla" aria-pressed="true">Alla</button>
+      <button type="button" class="filter placeholder-text" data-filter="kategori-1" aria-pressed="false">[Kategori 1]</button>
+      <button type="button" class="filter placeholder-text" data-filter="kategori-2" aria-pressed="false">[Kategori 2]</button>
+      <button type="button" class="filter placeholder-text" data-filter="kategori-3" aria-pressed="false">[Kategori 3]</button>
+    </div>
+
+    <!--
+      PRODUKTER
+      Nytt drag: kopiera ett helt <li class="product">…</li>-block och ändra
+      id, data-category, bild, namn och informationen i "product-info".
+      id används i webbadressen, t.ex. produkter.html#wobbler (små bokstäver, inga mellanslag).
+    -->
+    <ul class="product-grid catalog">
+
+      <li class="product" id="wobbler" data-category="kategori-1">
+        <button type="button" class="product-card" aria-haspopup="dialog">
+          <span class="media"><img src="bilder/produkt-1.jpg" alt="" loading="lazy"></span>
+          <span class="product-name">Wobbler</span>
+          <span class="product-more">Visa info →</span>
+        </button>
+        <div class="product-info" hidden>
+          <p class="placeholder-text">[Beskrivning av draget: hur det går i vattnet, vilken fisk det passar för.]</p>
+          <dl class="specs">
+            <dt>Längd</dt><dd class="placeholder-text">[cm]</dd>
+            <dt>Vikt</dt><dd class="placeholder-text">[gram]</dd>
+            <dt>Material</dt><dd class="placeholder-text">[t.ex. trä]</dd>
+            <dt>Pris</dt><dd class="placeholder-text">[€]</dd>
+            <dt>Tillgänglighet</dt><dd class="placeholder-text">[Finns / Slutsåld / Tillverkas på beställning]</dd>
+          </dl>
+        </div>
+      </li>
+
+      <li class="product" id="jigg-18cm" data-category="kategori-2">
+        <button type="button" class="product-card" aria-haspopup="dialog">
+          <span class="media"><img src="bilder/produkt-2.jpg" alt="" loading="lazy"></span>
+          <span class="product-name">Jigg 18cm</span>
+          <span class="product-more">Visa info →</span>
+        </button>
+        <div class="product-info" hidden>
+          <p class="placeholder-text">[Beskrivning av draget: hur det går i vattnet, vilken fisk det passar för.]</p>
+          <dl class="specs">
+            <dt>Längd</dt><dd>18 cm</dd>
+            <dt>Vikt</dt><dd class="placeholder-text">[gram]</dd>
+            <dt>Material</dt><dd class="placeholder-text">[t.ex. gummi]</dd>
+            <dt>Pris</dt><dd class="placeholder-text">[€]</dd>
+            <dt>Tillgänglighet</dt><dd class="placeholder-text">[Finns / Slutsåld / Tillverkas på beställning]</dd>
+          </dl>
+        </div>
+      </li>
+
+      <li class="product" id="crankbait" data-category="kategori-3">
+        <button type="button" class="product-card" aria-haspopup="dialog">
+          <span class="media"><img src="bilder/produkt-3.webp" alt="" loading="lazy"></span>
+          <span class="product-name">Crankbait</span>
+          <span class="product-more">Visa info →</span>
+        </button>
+        <div class="product-info" hidden>
+          <p class="placeholder-text">[Beskrivning av draget: hur det går i vattnet, vilken fisk det passar för.]</p>
+          <dl class="specs">
+            <dt>Längd</dt><dd class="placeholder-text">[cm]</dd>
+            <dt>Vikt</dt><dd class="placeholder-text">[gram]</dd>
+            <dt>Material</dt><dd class="placeholder-text">[t.ex. trä]</dd>
+            <dt>Pris</dt><dd class="placeholder-text">[€]</dd>
+            <dt>Tillgänglighet</dt><dd class="placeholder-text">[Finns / Slutsåld / Tillverkas på beställning]</dd>
+          </dl>
+        </div>
+      </li>
+
+    </ul>
+
+    <p class="empty-note" hidden>Inga drag i den här kategorin ännu.</p>
+
   </main>
+
+  <!--
+    INFORMATIONSRUTA – fylls automatiskt med det drag man klickar på.
+    Byt e-postadressen i data-email och Instagram-länken nedan.
+  -->
+  <dialog class="product-dialog" data-email="din-epost@example.com" aria-labelledby="dialog-title">
+    <div class="dialog-inner">
+      <div class="media dialog-media"><img alt=""></div>
+      <div class="dialog-body">
+        <button type="button" class="dialog-close" aria-label="Stäng">✕</button>
+        <h2 id="dialog-title"></h2>
+        <div class="dialog-info"></div>
+        <div class="dialog-actions">
+          <a class="button dialog-mail" href="#">Mejla om draget</a>
+          <a class="button button-secondary" href="https://www.instagram.com/alandbaits/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <p class="dialog-note">Det finns ingen webbshop. Kontakta oss så bekräftar vi pris och leverans.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="js/bilder.js"></script>
+  <script src="js/produkter.js"></script>
 
 </body>
 </html>

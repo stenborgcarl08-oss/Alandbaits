@@ -1,6 +1,6 @@
 // Visar en platshållare om en bild saknas.
 // Byt bild: lägg en ny fil i mappen bilder/ med samma namn som den gamla.
-document.querySelectorAll('.media img').forEach(function (img) {
+document.querySelectorAll('.media img[src]').forEach(function (img) {
   function showPlaceholder() {
     var box = img.parentElement;
     box.classList.add('is-missing');
